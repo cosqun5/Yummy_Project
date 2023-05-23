@@ -1,0 +1,46 @@
+﻿@using YummyMvc.Models;
+@model ICollection<Category>;
+
+@{
+    ViewData["Title"] = "Index";	var a = 1;
+}
+
+
+<div class="card">
+	<div class="card-body">
+		<h4 class="card-title">Category</h4>
+
+		<div class="table-responsive">
+			<table class="table">
+				<thead>
+					<tr>
+						<th>#</th>
+						<th>Name</th>
+						<th>Delete</th>
+						<th>Update</th>
+					</tr>
+				</thead>
+				<tbody>
+					@foreach (Category item in Model)
+					{
+
+						<tr>
+							<td>@a</td>
+							<td>@item.Name</td>
+							<td><a href="~/Admin/Category/Delete/@item.Id" class="btn btn-outline-danger"> Delete</a></td>
+							<td><a href="~/Admin/Category/Update/@item.Id" class="btn btn-outline-success">Update</a></td>
+
+						</tr>
+						a++;
+					}
+
+
+				</tbody>
+			</table>
+			<a href="~/Admin/Category/Create/" class="btn btn-outline-primary" style="margin-right:0px;">Create</a>
+		</div>
+	</div>
+</div>
+
+
+

@@ -1,0 +1,39 @@
+﻿@using YummyMvc.Areas.Admin.ViewModels
+@model CreateProductVM
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="card-body">
+    <h4 class="card-title">Create Page</h4>
+
+    <form class="forms-sample" method="post" action="Create">
+        <div class="form-group">
+            <label asp-for="Name">Name</label>
+            <input asp-for="Name" class="form-control" placeholder="Name">
+        </div>
+        <div class="form-group">
+            <label asp-for="Price">Price</label>
+            <input asp-for="Price" class="form-control" placeholder="Price">
+        </div>
+        <div class="form-group">
+            <label asp-for="Photo">Path</label>
+            <input asp-for="Photo" class="form-control" placeholder="Path">
+        </div>
+        <div class="form-group">
+            <select asp-for="CategoryId">
+                @foreach (var item in Model.Categories)
+                {
+                <option value="@item.Id">@item.Name</option>
+                    
+                }
+            </select>
+        </div>
+        <button type="submit" class="btn btn-primary mr-2">Create</button>
+        <a href="~/Admin/Category/Index/" class="btn btn-danger">Go back</a>
+    </form>
+</div>
+
+

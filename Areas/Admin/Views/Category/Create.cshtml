@@ -1,0 +1,19 @@
+﻿@using YummyMvc.Models;
+@model Category;
+
+
+<div class="card-body">
+    <h4 class="card-title">Create Page</h4>
+
+    <form class="forms-sample" method="post" action="Create">
+        <div class="form-group">
+            <label asp-for="Name">Name</label>
+            <input asp-for="Name" class="form-control" placeholder="Name">
+        </div>
+
+        <button type="submit" class="btn btn-primary mr-2">Create</button>
+        <a href="~/Admin/Category/Index/" class="btn btn-danger">Go back</a>
+    </form>
+</div>
+
+

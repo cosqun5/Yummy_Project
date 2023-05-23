@@ -1,0 +1,52 @@
+﻿@using YummyMvc.Models;
+@model List<Product>;
+@{
+	ViewData["Title"] = "Index";
+	Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+	var a = 1;
+}
+
+
+<div class="card">
+	<div class="card-body">
+		<h4 class="card-title">Product</h4>
+
+		<div class="table-responsive">
+			<table class="table">
+				<thead>
+					<tr>
+						<th>#</th>
+						<th>Name</th>
+						<th>Price</th>
+						<th>Category</th>
+						<th>Image</th>
+						<th>Delete</th>
+						<th>Update</th>
+					</tr>
+				</thead>
+				<tbody>
+					@foreach (Product item in Model)
+					{
+
+						<tr>
+							<td>@a</td>
+							<td>@item.Name</td>
+							<td>@item.Price</td>
+							<td>@item.Category.Name</td>
+							<td>@item.Path</td>
+							<td><a href="~/Admin/Product/Delete/@item.Id" class="btn btn-outline-danger"> Delete</a></td>
+							<td><a href="~/Admin/Product/Update/@item.Id" class="btn btn-outline-success">Update</a></td>
+
+						</tr>
+						a++;
+					}
+
+
+				</tbody>
+			</table>
+			<a href="~/Admin/Product/Create/" class="btn btn-outline-primary" style="margin-right:0px;">Create</a>
+		</div>
+	</div>
+</div>
+
+

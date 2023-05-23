@@ -1,0 +1,27 @@
+﻿@using YummyMvc.Models;
+@model Category;
+
+@{
+    ViewData["Title"] = "Update";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+
+
+<div class="card-body">
+    <h4 class="card-title">Create Page</h4>
+
+    <form class="forms-sample" method="post" action="Update">
+        @Html.HiddenFor(x=>x.Id)
+        <div class="form-group">
+            <label asp-for="Name">Name</label>
+            <input asp-for="Name" class="form-control" placeholder="Name">
+        </div>
+
+        <button type="submit" class="btn btn-primary mr-2">Update</button>
+        <a href="~/Admin/Category/Index/" class="btn btn-danger">Go back</a>
+    </form>
+</div>
+
+
+
